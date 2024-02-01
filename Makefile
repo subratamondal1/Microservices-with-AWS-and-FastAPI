@@ -10,3 +10,7 @@ test:
 deploy:
 	# deploy
 all: install format lint test deploy
+
+install-local:
+	# use this to work with poetry in your local environment, github actions were throwing error
+	poetry install

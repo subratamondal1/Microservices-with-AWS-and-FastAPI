@@ -1,5 +1,9 @@
 name: Microservices with AWS and Fastapi
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - '**/*.lock'
+      - '**/*.toml'
 jobs:
   build:
     runs-on: ubuntu-latest
