@@ -1,4 +1,9 @@
 <h1 align="center">Microservices with AWS and FastAPI</h1>
+<p align="center">
+  <img src="https://github.com/subratamondal1/Microservices-with-AWS-and-FastAPI/actions/workflows/devops.yml/badge.svg">
+</p>
+
+
 
 <h2 align="left">Scaffold</h2>
 
