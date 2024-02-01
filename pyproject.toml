@@ -2,7 +2,7 @@
 name = "learn-fastapi"
 version = "0.1.0"
 description = ""
-authors = ["Subrata Mondal <subratasubha2@gmail.com>"]
+authors = ["Subrata Mondal <60319087+subratamondal1@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
