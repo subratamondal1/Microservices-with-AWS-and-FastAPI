@@ -1,6 +1,6 @@
 install:
 	# install commands
-	curl -sSL https://install.python-poetry.org | python3 && pip install --upgrade pip && pip install -r requirements.txt && poetry install --no-root
+	pip install --upgrade pip && pip install -r requirements.txt
 format:
 	# format code
 lint:
