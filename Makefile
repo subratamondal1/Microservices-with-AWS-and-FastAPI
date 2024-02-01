@@ -9,6 +9,8 @@ lint:
 	pylint --disable=R,C *.py mylib/*py
 test:
 	# test
+build:
+	# build
 deploy:
 	# deploy
 all: install format lint test deploy
