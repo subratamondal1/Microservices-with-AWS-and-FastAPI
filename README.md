@@ -130,3 +130,57 @@ X-Cache: HIT
 The first line asks for the top page at example.com (a free website that anyone can use in, well, examples). It asks only for a URL, with no parameters anywhere else. The first block of lines is the HTTP request headers sent to the website, and the next block contains the HTTP response headers.
 
 <h2 align="left">Multiple Routers</h2>
+
+Multiple routers in FastAPI are a way to organize and mount different groups of path operations within your application. You can use the **APIRouter** class to create routers that handle specific endpoints, parameters, dependencies, tags, etc. Then you can include those routers in your main FastAPI app using the `app.include_router()` method.
+
+For example, you can create a router for users in a file `app/routers/users.py`:
+
+```python
+from fastapi import APIRouter
+
+router = APIRouter()
+
+@router.get("/users/", tags=["users"])
+async def read_users():
+    return [{"username": "Rick"}, {"username": "Morty"}]
+
+@router.get("/users/me", tags=["users"])
+async def read_user_me():
+    return {"username": "fakecurrentuser"}
+
+@router.get("/users/{username}", tags=["users"])
+async def read_user(username: str):
+    return {"username": username}
+```
+
+Then you can include this router in your main app file `app/main.py`:
+
+```python
+from fastapi import FastAPI
+from app.routers import users
+
+app = FastAPI()
+
+app.include_router(users.router)
+```
+
+This way, you can separate your path operations into different files and modules, and keep your code organized and maintainable. You can also reuse the same router with different prefixes, dependencies, or responses. You can create as many routers as you need, and include them in your app as you wish.
+
+<h2 align="left">Define Data Models</h2>
+
+First, define the data that we’ll be passing among levels. Our domain contains explorers and creatures, so let’s define minimal initial Pydantic models for them. Other ideas might come up later, like expeditions, journals, or ecommerce sales of coffee mugs.
+
+<h2 align="left">Create Common Functions Through the Stack</h2>
+
+Similar to the data examples, the approach to building this site is exploratory. Often it isn’t clear what will eventually be needed, so let’s start with some pieces that would be common to similar sites. Providing a frontend for data usually requires ways to do the following:
+
+- Get one, some, all
+- Create
+- Replace completely
+- Modify partially
+- Delete
+
+Essentially, these are the CRUD basics from databases, although I’ve split the U into partial (modify) and complete (replace) functions. Maybe this distinction will prove unnecessary! It depends on where the data leads.
+
+<h2 align="left">Create Fake Data</h2>
+Working top-down, you’ll duplicate some functions in all three levels. To save typing, introduces  the  top-level  directory  called  **fake**,  with  modules  providing fake data on explorers and creatures.
