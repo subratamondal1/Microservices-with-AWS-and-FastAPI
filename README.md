@@ -20,7 +20,9 @@
 4. Setup Continuous Integration for auto checking tasks like code formatting, linting, testing, etc.
 5. Build CLI using Python `fire` library.
 6. Containerization with Docker.
-7. AWS Deployment with AWS CodeBuild
+7. AWS Deployment with AWS ECR (Elastic Container Registry) and AWS CodeBuild
+
+**AWS ECR (Elastic Container Registry)**<br>
 
 - Steps:
   - Login into your AWS Account.
@@ -31,3 +33,8 @@
     2. Build docker image
     3. Tag your docker image
     4. Push the docker image to aws ecr
+
+**AWS CodeBuild**<br>
+
+- Steps:
+  - Login into your AWS Account.

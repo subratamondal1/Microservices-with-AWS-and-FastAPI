@@ -27,5 +27,4 @@ deploy:
 install-local:
 	# use this to work with poetry in your local environment, github actions were throwing error
 	poetry install --no-root
-
-all: install format lint test deploy
+all: install post-install format lint test deploy
