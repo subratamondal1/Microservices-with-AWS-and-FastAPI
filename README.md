@@ -16,6 +16,7 @@
 
 1. Create a Virtual Environment
 2. Create empty files: `Makefile`, `requirements.txt`, `main.py` to run the microservice, `Dockerfile`, `mylib/__init__.py`
-3. Populate `Makefile:` put the steps, lifecycle of your project in this file.
+3. Populate `Makefile:` put the steps, lifecycle of your project in this file such as code linting, formatting, etc.
 4. Setup Continuous Integration for auto checking tasks like code formatting, linting, testing, etc.
 5. Build CLI using Python `fire` library.
+6. Containerization with Docker.
